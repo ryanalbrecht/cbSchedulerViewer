@@ -3,7 +3,9 @@
 
 ## Introduction
 
-This is a module you can drop into your coldbox to get a nicely formatted overview of the tasks the were registered using the coldbox scheduler
+This is a module you can drop into your coldbox to get a nicely formatted overview of the tasks the were registered using the coldbox scheduler.
+
+This module should be considered experimetal, so use at your own risk until further development has been done.
 
 ## Requirements
 
