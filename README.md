@@ -19,7 +19,9 @@ This module should be considered experimetal, so use at your own risk until furt
 Installation is easy through [CommandBox](https://www.ortussolutions.com/products/commandbox) and [ForgeBox](https://www.coldbox.org/forgebox).  Simply type `box install cbSchedulerViewer` to get started.
 
 ## Usage
+
 The module should be automatically registered and ready to use. Simply navigate to `/cbSchedulerViewer`
+
 e.g. `http://127.0.0.1:8081/cbSchedulerViewer`
 
 By default the module will retrieve tasks from all module schedulers as well as the default global scheduler (appScheduler@coldbox). This can be overriden by creating the following struct in `moduleSettings`  in your config.cfc. 
