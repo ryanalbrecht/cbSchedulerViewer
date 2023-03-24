@@ -5,7 +5,7 @@ component {
 
 	function getAllTasks(){
 
-		var settings = wirebox.getInstance( dsl = "coldbox:moduleSettings:cbScheduler-viewer" );
+		var settings = wirebox.getInstance( dsl = "coldbox:moduleSettings:cbSchedulerViewer" );
 		var schedulers = settings.getSchedulers();
 
 		var tasks = schedulers.reduce( (r,i) => { 

@@ -3,7 +3,7 @@
  */
 component{
 
-	property name="schedulerHelper" inject="SchedulerHelper@cbScheduler-viewer";
+	property name="schedulerHelper" inject="SchedulerHelper@cbSchedulerViewer";
 
 	/**
 	 * Module EntryPoint

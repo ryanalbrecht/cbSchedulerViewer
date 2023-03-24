@@ -68,7 +68,7 @@
 			},
 
 			doUpdate(){
-				fetch("/cbScheduler-viewer/home/tasks")
+				fetch("/cbSchedulerViewer/home/tasks")
 					.then( (response) => response.json() )
 					.then( (data) => { 
 						this.tasks = data

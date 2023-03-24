@@ -41,7 +41,7 @@
 component {
 
 	// Module Properties
-	this.title 				= "cbScheduler-viewer";
+	this.title 				= "cbSchedulerViewer";
 	this.author 			= "Ryan Albrecht";
 	this.webURL 			= "https://github.com/ryanalbrecht";
 	this.description 		= "A module that will display the stats for cbScheduler tasks in a coldbox application";
@@ -51,13 +51,13 @@ component {
 	// If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa
 	this.layoutParentLookup = false;
 	// Module Entry Point
-	this.entryPoint			= "cbScheduler-viewer";
+	this.entryPoint			= "cbSchedulerViewer";
 	// Inherit Entry Point
 	this.inheritEntryPoint 	= false;
 	// Model Namespace
-	this.modelNamespace		= "cbScheduler-viewer";
+	this.modelNamespace		= "cbSchedulerViewer";
 	// CF Mapping
-	this.cfmapping			= "cbScheduler-viewer";
+	this.cfmapping			= "cbSchedulerViewer";
 	// Auto-map models
 	this.autoMapModels		= true;
 	// Module Dependencies
