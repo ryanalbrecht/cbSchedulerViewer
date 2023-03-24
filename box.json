@@ -18,10 +18,10 @@
             "URL":""
         }
     ],
-    "location":"ForgeboxStorage",
+    "location":"forgeboxStorage",
     "name":"cbScheduler-viewer",
     "private":false,
-    "projectURL":"",
+    "projectURL":"https://github.com/ryanalbrecht/cbScheduler-viewer",
     "repository":{
         "type":"",
         "URL":""
