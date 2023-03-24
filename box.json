@@ -6,8 +6,8 @@
     "dependencies":{},
     "description":"",
     "devDependencies":{},
-    "documentation":"",
-    "homepage":"",
+    "documentation":"https://github.com/ryanalbrecht/cbScheduler-viewer",
+    "homepage":"https://github.com/ryanalbrecht/cbScheduler-viewer",
     "ignore":[],
     "installPaths":{},
     "instructions":"",
@@ -50,5 +50,5 @@
         "watchPaths":"**.cfc"
     },
     "type":"modules",
-    "version":"1.0.1"
+    "version":"1.0.2"
 }
