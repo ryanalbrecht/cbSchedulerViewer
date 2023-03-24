@@ -18,4 +18,4 @@ Installation is easy through [CommandBox](https://www.ortussolutions.com/product
 The module should be automatically registered and ready to use. Simply navigate to `/cbScheduler-viewer`
 e.g. `http://127.0.0.1:8081/cbScheduler-viewer`
 
-![preview](https://raw.githubusercontent.com/ryanalbrecht/cbScheduler-viewer/master/preview.png)
+![alt text](https://github.com/ryanalbrecht/cbScheduler-viewer/blob/main]/preview.png?raw=true)
