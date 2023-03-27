@@ -1,3 +1,10 @@
+
+<style>
+	#task-root td, #task-root th {
+		font-size: 12px !important;
+	}
+</style>
+
 <cfoutput>
 
 <div id="task-root">
@@ -36,6 +43,7 @@
 		</button>
 	</div>
 </div>
+
 
 <script>
 
