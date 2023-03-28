@@ -3,7 +3,7 @@
  */
 component{
 
-	property name="schedulerHelper" inject="SchedulerHelper@cbScheduler-viewer";
+	property name="schedulerHelper" inject="SchedulerHelper@cbSchedulerViewer";
 
 	/**
 	 * Module EntryPoint
@@ -22,6 +22,8 @@ component{
 			return {
 				'name'				: task.name,
 				'module'			: task.module,
+				'scheduler'			: task.scheduler,
+				'disabled'			: task.disabled,
 				'created'			: dateTimeFormat(stats.created, 'short'),
 				'lastRun'			: dateTimeFormat(stats.lastRun, 'short'),
 				'lastDuration'		: stats.lastExecutionTime,
@@ -34,6 +36,29 @@ component{
 		})
 		
 		return serializeJSON(tasks);
+	}
+
+
+	/**
+	 * runTask
+	 */
+	function runTask( event, rc, prc ){
+		var scheduler = getInstance(rc.scheduler);
+		var task = scheduler.getTaskRecord(rc.task).task;
+		task.run();
+		event.noRender();
+	}
+
+
+	/**
+	 * toggleTask
+	 */
+	function toggleTask( event, rc, prc ){
+		var scheduler = getInstance(rc.scheduler);
+		var task = scheduler.getTaskRecord(rc.task).task;
+		var disabled = task.getDisabled();
+		disabled ? task.enable() : task.disable();
+		event.noRender();
 	}
 
 }

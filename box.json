@@ -6,8 +6,8 @@
     "dependencies":{},
     "description":"",
     "devDependencies":{},
-    "documentation":"https://github.com/ryanalbrecht/cbScheduler-viewer",
-    "homepage":"https://github.com/ryanalbrecht/cbScheduler-viewer",
+    "documentation":"https://github.com/ryanalbrecht/cbSchedulerViewer",
+    "homepage":"https://github.com/ryanalbrecht/cbSchedulerViewer",
     "ignore":[],
     "installPaths":{},
     "instructions":"",
@@ -19,16 +19,16 @@
         }
     ],
     "location":"forgeboxStorage",
-    "name":"cbScheduler-viewer",
+    "name":"cbSchedulerViewer",
     "private":false,
-    "projectURL":"https://github.com/ryanalbrecht/cbScheduler-viewer",
+    "projectURL":"https://github.com/ryanalbrecht/cbSchedulerViewer",
     "repository":{
         "type":"",
         "URL":""
     },
     "scripts":{},
     "shortDescription":"A module to display an overview of registered tasks created using the coldbox scheduler",
-    "slug":"cbScheduler-viewer",
+    "slug":"cbSchedulerViewer",
     "testbox":{
         "bundles":"",
         "directory":"tests.specs",
@@ -50,5 +50,5 @@
         "watchPaths":"**.cfc"
     },
     "type":"modules",
-    "version":"1.0.2"
+    "version":"1.0.3"
 }
