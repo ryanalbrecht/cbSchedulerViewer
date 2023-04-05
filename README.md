@@ -1,7 +1,7 @@
 
 
 # # [](https://www.forgebox.io/view/cbSchedulerViewer#cbSchedulerViewer)cbSchedulerViewer
-![alt text](https://github.com/ryanalbrecht/cbSchedulerViewer/blob/main/preview.png?raw=true)
+![alt text](https://github.com/ryanalbrecht/cbSchedulerViewer/blob/main/preview.gif?raw=true)
 
 ## Introduction
 
