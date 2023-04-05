@@ -18,7 +18,7 @@ component {
 		for( var module in loadedModules ){
 			try{				
 				var moduleScheduler = wirebox.getInstance('cbScheduler@#module#');
-				var moduleTasks = getSchedulerTasks(moduleScheduler, module);
+				var moduleTasks = getSchedulerTasks(moduleScheduler);
 				tasks = arrayMerge(tasks, moduleTasks);
 			}catch(any e){
 				//do nothing, assume the module does not have a scheduler
@@ -28,12 +28,8 @@ component {
 		return tasks;
 	}
 
-	function getSchedulerTasks(required scheduler, module_name = ''){
-		var _module_name = arguments.module_name;
+	function getSchedulerTasks(required scheduler){
 		var tasks = scheduler.getTasks().reduce((r,k,v)=>{ 
-			v['scheduler'] = v.task.getScheduler().getName();
-			v['disabled'] = v.task.getDisabled();
-			v['module'] = _module_name;
 			r.append(v);
 			return r;
 		}, []);

@@ -21,9 +21,8 @@ component{
 			var stats = task.task.getStats();
 			return {
 				'name'				: task.name,
-				'module'			: task.module,
-				'scheduler'			: task.scheduler,
-				'disabled'			: task.disabled,
+				'scheduler'			: task.task.getScheduler().getName(),
+				'disabled'			: task.task.getDisabled(),
 				'created'			: dateTimeFormat(stats.created, 'short'),
 				'lastRun'			: dateTimeFormat(stats.lastRun, 'short'),
 				'lastDuration'		: stats.lastExecutionTime,
@@ -33,8 +32,8 @@ component{
 				'totalSuccess'		: stats.totalSuccess,
 				'totalFailures'		: stats.totalFailures
 			}
-		})
-		
+		});
+
 		return serializeJSON(tasks);
 	}
 

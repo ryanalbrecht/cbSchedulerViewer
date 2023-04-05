@@ -7,7 +7,15 @@
 	.task-body .btn {
 		padding: 1px 6px;
 		font-size: 11px;
+		min-width: 38px;
 	}
+
+	.spinner-border-sm {
+		--bs-spinner-width: 10px;
+		--bs-spinner-height: 10px;
+		--bs-spinner-border-width: 0.2em;
+	}
+
 </style>
 
 <cfoutput>
@@ -48,13 +56,15 @@
 					<button class="btn btn-sm btn-secondary" @click="toggleTask(task)" style="width:50px">
 						{{ task.disabled ? 'Enable' : 'Disable' }}
 					</button>
-					<button class="btn btn-sm btn-primary ms-2" @click='runTask(task)'>Run</button>
+					<button class="btn btn-sm btn-primary ms-2" @click='runTask(task, $event)'>
+						Run
+					</button>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 
-	<div class="text-end">
+	<div class="text-start">
 		<button class="btn btn-sm" :class="[ shouldUpdate ? 'btn-secondary' : 'btn-dark' ]" @click="toggleUpdate" >
 			{{ shouldUpdate ? 'Stop Update' : 'Start Update' }}
 		</button>
@@ -105,17 +115,21 @@
 				return dur.toFormat( "hh : mm : ss" );
 			},
 
-			async runTask(task){
+			async runTask(task, event){
 
 				if(task.disabled){
 					new Noty({
 						type: 'warning',
-						layout: 'topRight',
-						timeout: 3000,
-						text: `Task '${task.name}' will not run as it is disabled.`
-					}).show();		
+						text: `Task '${task.name}' will not run as it is disabled.`,
+					}).show();
 					return;			
 				}
+
+				event.target.innerHTML = `
+					<div class="spinner-border spinner-border-sm" role="status">
+					  <span class="visually-hidden">Loading...</span>
+					</div>
+				`;
 
 				var resp = await fetch(`/cbSchedulerViewer/home/runTask?task=${task.name}&scheduler=${task.scheduler}`)
 
@@ -123,18 +137,17 @@
 					this.doUpdate();
 					new Noty({
 						type: 'success',
-						layout: 'topRight',
-						timeout: 3000,
-						text: `Task '${task.name}' ran successfully.`
-					}).show();	
+						text: `Task '${task.name}' ran successfully.`,
+					}).show();
+
 				} else {
 					new Noty({
 						type: 'error',
-						layout: 'topRight',
-						timeout: 3000,
-						text: `There was an error when attempting to run task '${task.name}'.`
+						text: `There was an error when attempting to run task '${task.name}'.`,
 					}).show();
 				}
+
+				event.target.innerHTML = ` Run `;
 			},
 
 			async toggleTask(task){
@@ -144,9 +157,7 @@
 				} else {
 					new Noty({
 						type: 'error',
-						layout: 'topRight',
-						timeout: 3000,
-						text: `There was an error when attempting to toggle the task '${task.name}'.`
+						text: `There was an error when attempting to toggle the task '${task.name}'.`,
 					}).show();
 				}
 			}
