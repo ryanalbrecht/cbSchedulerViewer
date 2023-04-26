@@ -27,7 +27,7 @@ component{
 				'lastRun'			: dateTimeFormat(stats.lastRun, 'short'),
 				'lastDuration'		: stats.lastExecutionTime,
 				'period'			: '#task.task.getPeriod()# #task.task.getTimeUnit()#', 
-				'nextRun'			: task.future.getDelay(),
+				'nextRun'			: isStruct(task.future) ? task.future.getDelay():0,
 				'totalRuns'			: stats.totalRuns,
 				'totalSuccess'		: stats.totalSuccess,
 				'totalFailures'		: stats.totalFailures
