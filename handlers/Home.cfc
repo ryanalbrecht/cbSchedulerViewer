@@ -34,7 +34,7 @@ component{
 			}
 		});
 
-		return serializeJSON(tasks);
+		event.renderData( type="JSON", data=tasks);
 	}
 
 
