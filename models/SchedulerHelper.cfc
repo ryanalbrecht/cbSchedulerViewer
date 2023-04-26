@@ -7,10 +7,11 @@ component {
 
 		var settings = wirebox.getInstance( dsl = "coldbox:moduleSettings:cbSchedulerViewer" );
 		var schedulers = settings.getSchedulers();
+		var tasks = [];
 
-		var tasks = schedulers.reduce( (r,i) => { 
-			return arrayMerge(r, getSchedulerTasks(i));
-		}, []);
+		schedulers.map( (i) => { 
+			arrayAppend(tasks, getSchedulerTasks(i), true);
+		});
 
 		//get module schedulers
 		var loadedModules = moduleService.getLoadedModules();
@@ -19,7 +20,7 @@ component {
 			try{				
 				var moduleScheduler = wirebox.getInstance('cbScheduler@#module#');
 				var moduleTasks = getSchedulerTasks(moduleScheduler);
-				tasks = arrayMerge(tasks, moduleTasks);
+				arrayAppend(tasks, moduleTasks, true);
 			}catch(any e){
 				//do nothing, assume the module does not have a scheduler
 			}
